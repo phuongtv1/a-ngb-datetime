@@ -1,0 +1,65 @@
+:host ::ng-deep .ngb-tp-meridian {
+    background-color: darkgray;
+}
+
+:host ::ng-deep .ng-valid {
+    height: inherit;
+}
+
+:host ::ng-deep .fa-calendar {
+    color: blue;
+}
+
+:host ::ng-deep .ngb-dp-arrow-btn {
+    color: blue;
+}
+
+:host ::ng-deep .ngb-tp-chevron {
+    color: blue;
+}
+
+:host ::ng-deep .ngb-dp-day,
+.ngb-dp-week-number,
+.ngb-dp-weekday {
+    width: 3rem;
+    height: 3rem;
+}
+
+:host ::ng-deep [ngbDatepickerDayView] {
+    text-align: center;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    border-radius: .25rem;
+    background: 0 0;
+}
+
+
+:host ::ng-deep .popover-body {
+    padding: .5rem .75rem;
+    color: #212529;
+    width: 23rem;
+    background: white;
+}
+
+:host ::ng-deep .ngb-dp-weekday {
+    width: 3rem;
+}
+.custom-btn {
+    background-color: white;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    border-left: none;
+}
+:host ::ng-deep #ngb-popover-0 {
+    left: -95px !important;
+}
+:host ::ng-deep #ngb-popover-1 {
+    left: -95px !important;
+}
+:host ::ng-deep #ngb-popover-6 {
+    left: -95px !important;
+}
+:host ::ng-deep #ngb-popover-7 {
+    left: -95px !important;
+}

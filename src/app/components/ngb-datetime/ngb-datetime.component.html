@@ -1,0 +1,53 @@
+<div class="input-group mr-2" style="margin-left: 10px">
+    <input (paste)="onPaste($event)" onkeydown="return false"
+      [placeholder]="placeholder"
+      [ngClass]="ngControl?.valid ? 'ng-valid' : 'ng-invalid'"
+      class="form-control" [disabled]="true"
+      (blur)="inputBlur($event)"
+      [ngModel]="date | date: inputDatetimeFormat"
+      (change)="onInputChange($event)"
+      style="background-color: white; border-right: none !important;"
+    />
+  
+    <div class="input-group-append">
+      <button 
+        [ngClass]="isClass ? 'btn-outline-secondary custom-btn' : 'btn btn-outline-secondary'"
+        [ngbPopover]="calendarContent"
+        [disabled]="disabled"
+        type="button"
+      >
+        <i class="fa fa-calendar" [ngStyle]="{'font-size':isClass ? '12px' : '' }"></i>
+      </button>
+    </div>
+  </div>
+  
+  <ng-template #calendarContent>
+      <div *ngIf="!isMinDate; else elseBlock">
+        <ngb-datepicker 
+          #dp
+          name="datepicker"
+          [(ngModel)]="dateStruct"
+          (ngModelChange)="onDateChange($event)"
+          [minDate]="minDate"
+        ></ngb-datepicker>
+        <ngb-timepicker *ngIf="showTimePicker"
+          meridian="true"
+          [seconds]="false"
+          #tp
+          name="timepicker"
+          [(ngModel)]="timeStruct"
+          (ngModelChange)="onTimeChange($event)"
+          [seconds]="seconds"
+          [hourStep]="hourStep"
+          [minuteStep]="minuteStep"
+        ></ngb-timepicker>
+      </div>
+      <ng-template #elseBlock>
+        <ngb-datepicker
+        #dp
+        name="datepicker"
+        [(ngModel)]="dateStruct"
+        (ngModelChange)="onDateChange($event)"
+      ></ngb-datepicker>
+      </ng-template>
+  </ng-template>
